@@ -88,13 +88,18 @@ public class MapKTU<K, V> implements MapADTp<K, V> {
         return size == 0;
     }
 
-    void replaceAll(V oldValue, V newValue){
+    public void replaceAll(V oldValue, V newValue){
         //Replaces all the entries only if currently mapped to the specified value.
-        48681653
+        if(oldValue != null && newValue != null) {
+            for (Node<K, V> thing : table) {
+                if (thing.value == oldValue)
+                    thing.value = newValue;
+            }
+        }-----
     }
-    Set<K> keyset(){
+    public Set<K> keyset(){
         //Returns a Set of the keys contained in this map.
-        Set<K> set =
+csuc
     }
 
     /**
